@@ -1,0 +1,250 @@
+{
+  "pullrequest": {
+    "rendered": {
+      "description": {
+        "raw": "README.md edited online with Bitbucket",
+        "markup": "markdown",
+        "html": "<p>README.md edited online with Bitbucket</p>",
+        "type": "rendered"
+      },
+      "title": {
+        "raw": "README.md edited online with Bitbucket",
+        "markup": "markdown",
+        "html": "<p>README.md edited online with Bitbucket</p>",
+        "type": "rendered"
+      }
+    },
+    "type": "pullrequest",
+    "description": "README.md edited online with Bitbucket",
+    "links": {
+      "decline": {
+        "href": "https://api.bitbucket.org/2.0/repositories/dbass_connectall/test/pullrequests/1/decline"
+      },
+      "diffstat": {
+        "href": "https://api.bitbucket.org/2.0/repositories/dbass_connectall/test/diffstat/dbass_connectall/test:ed750f4eddd6%0D8b424e5f2fda?from_pullrequest_id=1"
+      },
+      "commits": {
+        "href": "https://api.bitbucket.org/2.0/repositories/dbass_connectall/test/pullrequests/1/commits"
+      },
+      "self": {
+        "href": "https://api.bitbucket.org/2.0/repositories/dbass_connectall/test/pullrequests/1"
+      },
+      "comments": {
+        "href": "https://api.bitbucket.org/2.0/repositories/dbass_connectall/test/pullrequests/1/comments"
+      },
+      "merge": {
+        "href": "https://api.bitbucket.org/2.0/repositories/dbass_connectall/test/pullrequests/1/merge"
+      },
+      "html": {
+        "href": "https://bitbucket.org/dbass_connectall/test/pull-requests/1"
+      },
+      "activity": {
+        "href": "https://api.bitbucket.org/2.0/repositories/dbass_connectall/test/pullrequests/1/activity"
+      },
+      "diff": {
+        "href": "https://api.bitbucket.org/2.0/repositories/dbass_connectall/test/diff/dbass_connectall/test:ed750f4eddd6%0D8b424e5f2fda?from_pullrequest_id=1"
+      },
+      "approve": {
+        "href": "https://api.bitbucket.org/2.0/repositories/dbass_connectall/test/pullrequests/1/approve"
+      },
+      "statuses": {
+        "href": "https://api.bitbucket.org/2.0/repositories/dbass_connectall/test/pullrequests/1/statuses"
+      }
+    },
+    "title": "README.md edited online with Bitbucket",
+    "close_source_branch": true,
+    "reviewers": [],
+    "id": 1,
+    "destination": {
+      "commit": {
+        "hash": "8b424e5f2fda",
+        "type": "commit",
+        "links": {
+          "self": {
+            "href": "https://api.bitbucket.org/2.0/repositories/dbass_connectall/test/commit/8b424e5f2fda"
+          },
+          "html": {
+            "href": "https://bitbucket.org/dbass_connectall/test/commits/8b424e5f2fda"
+          }
+        }
+      },
+      "repository": {
+        "links": {
+          "self": {
+            "href": "https://api.bitbucket.org/2.0/repositories/dbass_connectall/test"
+          },
+          "html": {
+            "href": "https://bitbucket.org/dbass_connectall/test"
+          },
+          "avatar": {
+            "href": "https://bytebucket.org/ravatar/%7B9372fe97-2683-49d6-b588-61209c60eba0%7D?ts=default"
+          }
+        },
+        "type": "repository",
+        "name": "test",
+        "full_name": "dbass_connectall/test",
+        "uuid": "{9372fe97-2683-49d6-b588-61209c60eba0}"
+      },
+      "branch": {
+        "name": "dev"
+      }
+    },
+    "created_on": "2020-08-07T20:46:42.903700+00:00",
+    "summary": {
+      "raw": "README.md edited online with Bitbucket",
+      "markup": "markdown",
+      "html": "<p>README.md edited online with Bitbucket</p>",
+      "type": "rendered"
+    },
+    "source": {
+      "commit": {
+        "hash": "ed750f4eddd6",
+        "type": "commit",
+        "links": {
+          "self": {
+            "href": "https://api.bitbucket.org/2.0/repositories/dbass_connectall/test/commit/ed750f4eddd6"
+          },
+          "html": {
+            "href": "https://bitbucket.org/dbass_connectall/test/commits/ed750f4eddd6"
+          }
+        }
+      },
+      "repository": {
+        "links": {
+          "self": {
+            "href": "https://api.bitbucket.org/2.0/repositories/dbass_connectall/test"
+          },
+          "html": {
+            "href": "https://bitbucket.org/dbass_connectall/test"
+          },
+          "avatar": {
+            "href": "https://bytebucket.org/ravatar/%7B9372fe97-2683-49d6-b588-61209c60eba0%7D?ts=default"
+          }
+        },
+        "type": "repository",
+        "name": "test",
+        "full_name": "dbass_connectall/test",
+        "uuid": "{9372fe97-2683-49d6-b588-61209c60eba0}"
+      },
+      "branch": {
+        "name": "Doug-Bass/readmemd-edited-online-with-bitbucket-1596833186161"
+      }
+    },
+    "comment_count": 0,
+    "state": "OPEN",
+    "task_count": 0,
+    "participants": [],
+    "reason": "",
+    "updated_on": "2020-08-07T20:46:42.958842+00:00",
+    "author": {
+      "display_name": "Doug Bass",
+      "account_id": "70121:48c40bb6-b5d4-45d6-a0dc-7702019c060c",
+      "links": {
+        "self": {
+          "href": "https://api.bitbucket.org/2.0/users/%7Bf919ae9d-5eb5-426e-9c7c-aea8e6aaa4fb%7D"
+        },
+        "html": {
+          "href": "https://bitbucket.org/%7Bf919ae9d-5eb5-426e-9c7c-aea8e6aaa4fb%7D/"
+        },
+        "avatar": {
+          "href": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/70121:48c40bb6-b5d4-45d6-a0dc-7702019c060c/4110a0b4-7c84-41bc-88ce-4298d97bb504/128"
+        }
+      },
+      "nickname": "Commander Bass",
+      "type": "user",
+      "uuid": "{f919ae9d-5eb5-426e-9c7c-aea8e6aaa4fb}"
+    },
+    "merge_commit": null,
+    "closed_by": null
+  },
+  "repository": {
+    "scm": "git",
+    "website": null,
+    "uuid": "{9372fe97-2683-49d6-b588-61209c60eba0}",
+    "links": {
+      "self": {
+        "href": "https://api.bitbucket.org/2.0/repositories/dbass_connectall/test"
+      },
+      "html": {
+        "href": "https://bitbucket.org/dbass_connectall/test"
+      },
+      "avatar": {
+        "href": "https://bytebucket.org/ravatar/%7B9372fe97-2683-49d6-b588-61209c60eba0%7D?ts=default"
+      }
+    },
+    "project": {
+      "links": {
+        "self": {
+          "href": "https://api.bitbucket.org/2.0/workspaces/dbass_connectall/projects/CAD"
+        },
+        "html": {
+          "href": "https://bitbucket.org/dbass_connectall/workspace/projects/CAD"
+        },
+        "avatar": {
+          "href": "https://bitbucket.org/account/user/dbass_connectall/projects/CAD/avatar/32?ts=1596581287"
+        }
+      },
+      "type": "project",
+      "name": "CADemo",
+      "key": "CAD",
+      "uuid": "{71e4f263-b758-4a45-b1cc-985ffb522b25}"
+    },
+    "full_name": "dbass_connectall/test",
+    "owner": {
+      "display_name": "Doug Bass",
+      "account_id": "70121:48c40bb6-b5d4-45d6-a0dc-7702019c060c",
+      "links": {
+        "self": {
+          "href": "https://api.bitbucket.org/2.0/users/%7Bf919ae9d-5eb5-426e-9c7c-aea8e6aaa4fb%7D"
+        },
+        "html": {
+          "href": "https://bitbucket.org/%7Bf919ae9d-5eb5-426e-9c7c-aea8e6aaa4fb%7D/"
+        },
+        "avatar": {
+          "href": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/70121:48c40bb6-b5d4-45d6-a0dc-7702019c060c/4110a0b4-7c84-41bc-88ce-4298d97bb504/128"
+        }
+      },
+      "nickname": "Commander Bass",
+      "type": "user",
+      "uuid": "{f919ae9d-5eb5-426e-9c7c-aea8e6aaa4fb}"
+    },
+    "workspace": {
+      "name": "Doug Bass",
+      "type": "workspace",
+      "uuid": "{f919ae9d-5eb5-426e-9c7c-aea8e6aaa4fb}",
+      "links": {
+        "self": {
+          "href": "https://api.bitbucket.org/2.0/workspaces/dbass_connectall"
+        },
+        "html": {
+          "href": "https://bitbucket.org/dbass_connectall/"
+        },
+        "avatar": {
+          "href": "https://bitbucket.org/workspaces/dbass_connectall/avatar/?ts=1596575017"
+        }
+      },
+      "slug": "dbass_connectall"
+    },
+    "type": "repository",
+    "is_private": true,
+    "name": "test"
+  },
+  "actor": {
+    "display_name": "Doug Bass",
+    "account_id": "70121:48c40bb6-b5d4-45d6-a0dc-7702019c060c",
+    "links": {
+      "self": {
+        "href": "https://api.bitbucket.org/2.0/users/%7Bf919ae9d-5eb5-426e-9c7c-aea8e6aaa4fb%7D"
+      },
+      "html": {
+        "href": "https://bitbucket.org/%7Bf919ae9d-5eb5-426e-9c7c-aea8e6aaa4fb%7D/"
+      },
+      "avatar": {
+        "href": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/70121:48c40bb6-b5d4-45d6-a0dc-7702019c060c/4110a0b4-7c84-41bc-88ce-4298d97bb504/128"
+      }
+    },
+    "nickname": "Commander Bass",
+    "type": "user",
+    "uuid": "{f919ae9d-5eb5-426e-9c7c-aea8e6aaa4fb}"
+  }
+}

@@ -1,0 +1,1 @@
+/Applications/apache-tomcat-8.5.41/bin/shutdown.sh && mvn -Dmaven.test.skip=true clean package && cp target/connectall-tunnel*war /Users/doug/Documents/workspace/Docker/data/1-node-2.9.5/CATomcat/webapps/. && /Applications/apache-tomcat-8.5.41/bin/startup.sh && tail -f /Users/doug/Documents/workspace/Docker/data/1-node-2.9.5/CATomcat/logs/catalina.out
