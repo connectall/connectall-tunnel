@@ -5,7 +5,7 @@ To install it:
 2) Copy the war to your ConnectAll tomcat webapp folder.
 3) Copy the connectall-tunnel.properties to the tomcat conf folder and edit the proprties for your ConnectALL installation.
 4) Restart tomcat.
-5) Add the webhook to your application that calls this webapp. And example is: http://74.103.66.8:8080/connectall-tunnel-1.0/rest/api/push/Bitbucket2DB?apiKey=xxx. Note that BitBucket2DB is the name of the application link to send the data to in ConnectALL.
+5) Add the webhook to your application that calls this webapp. And example is: http://hostname:8080/connectall-tunnel-1.0/rest/api/push/Bitbucket2DB?apiKey=xxx. Note that BitBucket2DB is the name of the application link to send the data to in ConnectALL.
 
 
 You can review the catalina.out file to see the input and output json.
