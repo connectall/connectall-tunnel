@@ -47,7 +47,6 @@ public class SessionService {
 		String configFile = configDir + s + "connectall-tunnel.properties";
 		p.load(new FileInputStream(configFile));
 		url = (String) p.get("url");
-		postCommentUrl = (String) p.get("comment_url");
 		userCredentials = (String) p.getProperty("auth");
 		//apiKey = (String) p.getProperty("apiKey");
 	}
@@ -126,12 +125,12 @@ public class SessionService {
 					if (issueKey == null)
 						issueKey = addIssueKey(title);
 					String date = commit.getString("date");
-					String diff = commit.getJSONObject("links").getJSONObject("diff").getString("href");
-					fields.put("body",  recordId+"\n"+date+"\n"+title+"\n"+diff);
+					String diff = commit.getJSONObject("links").getJSONObject("html").getString("href");
+					fields.put("body",  "Commit Hash: " + recordId+"\nCommit Date: "+date+"\n\n"+title+"\n\nCommit details:"+diff);
 					commentList.put(fields);
 				}	// end for each commit			
 
-				result.put("recordId", recordId);
+				result.put("recordId", issueKey);
 				result.put("appLinkName", appLink);
 				result.put("commentList", commentList);
 				logger.info("The result is: " + result);
@@ -144,11 +143,17 @@ public class SessionService {
 				linkerFields.put("id", issueKey);
 				linker.put("fields",  new JSONObject(linkerFields));
 				linker.put("appLinkName", appLink);
+				logger.info("Post to this url"+url);
 				logger.info("Linker record body="+linker);
-				PostRecordApi.postRecord(url, userCredentials, apiKey, linker.toString());
+				PostRecordApi.postRecord(url+"/postRecord", userCredentials, apiKey, linker.toString());
+				
+				waitForCompletion(url, apiKey, appLink, recordId);
+				Thread.sleep(60000);
 
 				// Update the remote endpoint with the checkin comments
-				PostRecordApi.postRecord(postCommentUrl, userCredentials, apiKey, result.toString());
+				logger.info("Post to this url"+postCommentUrl);
+
+				PostRecordApi.postRecord(url+"/postRecordCommentById", userCredentials, apiKey, result.toString());
 				return Response.status(status)
 						.build();
 
@@ -166,6 +171,22 @@ public class SessionService {
 
 	DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSSSSXXX");
 	DateFormat df2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+	private void waitForCompletion(String url, String apiKey, String appLink, String recordId) {
+		String json = "{\"appLinkName\":\""+appLink+"\",\"recordId\":\""+recordId+"\"}";
+		String result = null;
+		try {
+			for (int i=0; i<10; i++) {
+				result = PostRecordApi.getRecord(url+"/getLinkedRecordId", userCredentials, apiKey, json);
+				logger.info("The response is:"+result);
+				return;
+			}
+		} catch (Exception e) {
+			try {
+			Thread.sleep(10000);
+			} catch (Exception e1) {}
+		}
+	}
 
 	private String addIssueKey(Map<String,Object> fields) {
 		for (Iterator<String> iter = fields.keySet().iterator(); iter.hasNext(); ) {

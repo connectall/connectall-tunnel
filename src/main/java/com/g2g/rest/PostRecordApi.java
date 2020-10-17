@@ -12,43 +12,84 @@ import org.apache.commons.logging.LogFactory;
 
 public class PostRecordApi {
 
-private static final org.apache.commons.logging.Log logger = LogFactory.getLog(PostRecordApi.class);
+	private static final org.apache.commons.logging.Log logger = LogFactory.getLog(PostRecordApi.class);
 
-public static void postRecord(String url, String userCredentials, String apiKey, String body) throws Exception {
-  logger.info("Send a request to " + url + " using the credentials " + userCredentials);
-  URL obj = new URL(url);
-  HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-  String input = body;
+	public static void postRecord(String url, String userCredentials, String apiKey, String body) throws Exception {
+		logger.info("Send a request to " + url + " using the credentials " + userCredentials);
+		URL obj = new URL(url);
+		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+		String input = body;
 
-  String basicAuth = "Basic " + new String(Base64.getEncoder().encode(userCredentials.getBytes()));
+		String basicAuth = "Basic " + new String(Base64.getEncoder().encode(userCredentials.getBytes()));
 
-  con.setRequestProperty ("Authorization", basicAuth);
-  con.setRequestMethod("POST");
-  con.setRequestProperty("Content-Type", "application/json");
-  con.setRequestProperty("Accept", "application/json");
-  con.setRequestProperty ("apikey", apiKey);
+		con.setRequestProperty ("Authorization", basicAuth);
+		con.setRequestMethod("POST");
+		con.setRequestProperty("Content-Type", "application/json");
+		con.setRequestProperty("Accept", "application/json");
+		con.setRequestProperty ("apikey", apiKey);
 
-  con.setDoInput(true);
-  con.setDoOutput(true);
-  OutputStream os = con.getOutputStream();
-  os.write(input.getBytes());
-  os.flush();
+		con.setDoInput(true);
+		con.setDoOutput(true);
+		OutputStream os = con.getOutputStream();
+		os.write(input.getBytes());
+		os.flush();
 
-  int responseCode = con.getResponseCode();
-  logger.info("Method Response Code :: " + responseCode);
+		int responseCode = con.getResponseCode();
+		logger.info("Method Response Code :: " + responseCode);
 
-  if (responseCode == HttpURLConnection.HTTP_OK || responseCode == 201) { //success
-    BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
-    String inputLine;
-    StringBuffer response = new StringBuffer();
+		if (responseCode == HttpURLConnection.HTTP_OK || responseCode == 201) { //success
+			BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+			String inputLine;
+			StringBuffer response = new StringBuffer();
 
-    while ((inputLine = in.readLine()) != null) {
-      response.append(inputLine);
-    }
-    in.close();
-    logger.info(response.toString());
-  } else {
-	  logger.info("Method request not worked");
-  }
-}
+			while ((inputLine = in.readLine()) != null) {
+				response.append(inputLine);
+			}
+			in.close();
+			logger.info(response.toString());
+		} else {
+			logger.info("Method request not worked");
+		}
+	}
+
+	public static String getRecord(String url, String userCredentials, String apiKey, String body) throws Exception {
+		logger.info("Send a request to " + url + " using the credentials " + userCredentials);
+		logger.info("Send the request body: "+body);
+		URL obj = new URL(url);
+		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+		String input = body;
+		StringBuffer response = new StringBuffer("error");
+
+
+		String basicAuth = "Basic " + new String(Base64.getEncoder().encode(userCredentials.getBytes()));
+
+		con.setRequestProperty ("Authorization", basicAuth);
+		con.setRequestMethod("GET");
+		con.setRequestProperty("Content-Type", "application/json");
+		con.setRequestProperty("Accept", "application/json");
+		con.setRequestProperty ("apikey", apiKey);
+
+		con.setDoInput(true);
+		con.setDoOutput(true);
+		OutputStream os = con.getOutputStream();
+		os.write(input.getBytes());
+		os.flush();
+
+		int responseCode = con.getResponseCode();
+		logger.info("Method Response Code :: " + responseCode);
+
+		if (responseCode == HttpURLConnection.HTTP_OK || responseCode == 201) { //success
+			BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+			String inputLine;
+
+			while ((inputLine = in.readLine()) != null) {
+				response.append(inputLine);
+			}
+			in.close();
+			logger.info("The response is: "+response.toString());
+		} else {
+			logger.info("Method request not worked");
+		}	
+		return response.toString();
+	}
 }
