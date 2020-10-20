@@ -112,11 +112,11 @@ public class SessionService {
 			JSONObject args = new JSONObject(input);
 			JSONObject push = args.getJSONObject("push");
 			JSONArray changes = push.getJSONArray("changes");
-			for (int j=0; j < changes.length(); j++) {
+			for (int j=changes.length()-1; j >= 0; j--) {
 				JSONObject change = changes.getJSONObject(j);
 				logger.info("Change = " + change);
 				JSONArray commits = change.getJSONArray("commits");
-				for (int i=0; i<commits.length(); i++) {
+				for (int i=commits.length()-1; i>= 0; i--) {
 					Map<String,String> fields = new HashMap<String,String>();
 					JSONObject commit = commits.getJSONObject(i); 
 					recordId = commit.getString("hash");
